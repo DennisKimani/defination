@@ -1,6 +1,7 @@
 require('rspec')
  require('defination')
 
+#this is our word class where the words are going to be added.
  describe(Word) do
    describe("#single") do
      it('lets one display the word entered')do
@@ -38,3 +39,5 @@ require('rspec')
      expect("dog").to(eq("dog"))
    end
  end
+
+#this is the description 
