@@ -1,13 +1,9 @@
 class Word
-
-  define_method(:initialize) do
-
+  define_method(:initialize) do |description|
+    @description = description
   end
-end
 
-class Definition
-
-  define_method(:definition) do
-
+  define_method(:description) do
+    @description
   end
 end
