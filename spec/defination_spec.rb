@@ -15,6 +15,14 @@ require('rspec')
      end
    end
 
+   describe("#save") do
+     it("adds a word to the array of saved words") do
+       test_word = Word.new("coding")
+       test_word.save()
+       expect(Word.all()).to(eq([test_word]))
+     end
+   end
+
    it('accepts the input word entered') do
      expect("food").to(eq("food"))
    end
