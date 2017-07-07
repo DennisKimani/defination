@@ -2,10 +2,10 @@ require('rspec')
  require('defination')
 
  describe(Word) do
-   describe("#description") do
-     it('lets one give a description to a word')do
+   describe("#single") do
+     it('lets one display the word entered')do
        test_word = Word.new("go")
-       expect(test_word.description()).to(eq("go"))
+       expect(test_word.single()).to(eq("go"))
      end
    end
 

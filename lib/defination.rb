@@ -1,10 +1,10 @@
 class Word
-  define_method(:initialize) do |description|
-    @description = description
+  define_method(:initialize) do |single|
+    @single = single
   end
 
-  define_method(:description) do
-    @description
+  define_method(:single) do
+    @single
   end
 
   define_singleton_method(:all) do
