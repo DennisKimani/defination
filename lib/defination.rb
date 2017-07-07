@@ -4,3 +4,10 @@ class Word
 
   end
 end
+
+class Definition
+
+  define_method(:definition) do
+
+  end
+end
