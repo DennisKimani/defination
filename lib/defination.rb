@@ -20,4 +20,8 @@ class Word
   define_method(:clear) do
     @@all_words = []
   end
+
+  define_method(:hide) do
+    @@sinlge = []
+  end
 end
