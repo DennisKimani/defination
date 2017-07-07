@@ -16,4 +16,8 @@ class Word
   define_method(:save) do
     @@all_words.push(self)
   end
+
+  define_method(:clear) do
+    @@all_words = []
+  end
 end
