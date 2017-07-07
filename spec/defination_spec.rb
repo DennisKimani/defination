@@ -23,14 +23,11 @@ require('rspec')
      end
    end
 
-   describe(".clear") do
-     it("empities out all the saved words") do
-       Word.new("type").save()
+   describe(Word) do
+     before() do
        Word.clear()
-       expect(Word.all()).to(eq([]))
      end
    end
-
    it('accepts the input word entered') do
      expect("food").to(eq("food"))
    end
