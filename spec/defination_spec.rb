@@ -9,6 +9,12 @@ require('rspec')
      end
    end
 
+   describe(".all") do
+     it("is empty at first") do
+       expect(Word.all()).to(eq([]))
+     end
+   end
+
    it('accepts the input word entered') do
      expect("food").to(eq("food"))
    end
