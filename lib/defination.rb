@@ -1,6 +1,6 @@
 class Word
 
-  define_method(:word) do
+  define_method(:initialize) do
 
   end
 end
