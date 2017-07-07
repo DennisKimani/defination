@@ -23,17 +23,12 @@ require('rspec')
      end
    end
 
-   describe("#hide") do
-     it("hides a word when not needed in the array") do
-       test_word = Word.new("happy")
-       test_word.hide()
-       expect(Word.single()).to(eq([]))
-     end
-   end
 
+   describe(Word) do
      before() do
        Word.clear()
      end
+   end
 
    it('accepts the input word entered') do
      expect("food").to(eq("food"))
