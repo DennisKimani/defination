@@ -12,6 +12,7 @@ require('sinatra')
 
  post("/words") do
    single = params.fetch("single")
-   Word.new(single).save
-   erb(:success)
+   word = Word.new(single)
+   word.save()
+    erb(:success)
  end
