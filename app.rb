@@ -1,7 +1,7 @@
 require('sinatra')
  require('sinatra/reloader')
  also_reload("lib/**/*.rb")
- require("./lib/defination")
+ require("./lib/word")
  require('pry')
 
 
@@ -12,8 +12,6 @@ require('sinatra')
 
  post("/words") do
    single = params.fetch("single")
-   word = Word.new(single)
-   binding.pry
-   word.save()
+   Word.new(single).save
    erb(:success)
  end

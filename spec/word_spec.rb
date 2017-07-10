@@ -1,5 +1,5 @@
 require('rspec')
- require('defination')
+ require('word')
 
 #this is our word class where the words are going to be added.
  describe(Word) do
@@ -31,13 +31,13 @@ require('rspec')
      end
    end
 
-   it('accepts the input word entered') do
-     expect("food").to(eq("food"))
-   end
+ #   it('accepts the input word entered') do
+ #     expect("food").to(eq("food"))
+ #   end
+ #
+ #   it('displays the word to the index page') do
+ #     expect("dog").to(eq("dog"))
+ #   end
+ # end
 
-   it('displays the word to the index page') do
-     expect("dog").to(eq("dog"))
-   end
- end
-
-#this is the description 
+#this is the description
