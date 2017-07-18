@@ -2,13 +2,17 @@ require('rspec')
  require('word')
 
 #this is our word class where the words are going to be added.
- describe(Word) do
-   describe("#single") do
-     it('lets one display the word entered')do
-       test_word = Word.new("go")
-       expect(test_word.single()).to(eq("go"))
-     end
+ describe('Word') do
+   before() do
+     Word.clear()
    end
+
+  #  describe("#single") do
+  #    it('lets one display the word entered')do
+  #      test_word = Word.new("go")
+  #      expect(test_word.single()).to(eq("go"))
+  #    end
+  #  end
 
    describe(".all") do
      it("is empty at first") do
@@ -24,13 +28,22 @@ require('rspec')
      end
    end
 
-
-   describe(Word) do
-     before() do
-       Word.clear()
+   describe("#save") do
+     it("adds a word to the array of saved words") do
+       test_word = Word.new("Pack")
+       test_word.save()
+       expect(Word.all()).to(eq([test_word]))
      end
    end
 
+   describe(".clear") do
+     it("empties out all of the saved words") do
+       Word.new("coding").save()
+       Word.clear()
+       expect(Word.all()).to(eq([]))
+     end
+   end
+end
  #   it('accepts the input word entered') do
  #     expect("food").to(eq("food"))
  #   end

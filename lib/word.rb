@@ -1,5 +1,5 @@
 class Word
-  @@all_words = []
+  @@words = []
 
   define_method(:initialize) do |single|
     @single = single
@@ -10,14 +10,14 @@ class Word
   end
 
   define_singleton_method(:all) do
-    @@all_words
+    @@words
   end
 
   define_method(:save) do
-    @@all_words.push(self)
+    @@words.push(self)
   end
 
-  define_method(:clear) do
-    @@all_words = []
+  define_singleton_method(:clear) do
+    @@words = []
   end
 end
