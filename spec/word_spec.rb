@@ -7,12 +7,12 @@ require('rspec')
      Word.clear()
    end
 
-  #  describe("#single") do
-  #    it('lets one display the word entered')do
-  #      test_word = Word.new("go")
-  #      expect(test_word.single()).to(eq("go"))
-  #    end
-  #  end
+   describe("#single") do
+     it('lets one display the word entered')do
+       test_word = Word.new("go")
+       expect(test_word.single()).to(eq("go"))
+     end
+   end
 
    describe(".all") do
      it("is empty at first") do
