@@ -3,6 +3,7 @@ class Word
 
   define_method(:initialize) do |single|
     @single = single
+    @id = @@words.length().+(1)
   end
 
   define_method(:single) do
