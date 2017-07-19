@@ -14,11 +14,11 @@ require('rspec')
      end
    end
 
-   describe("#id") do
-     it("returns the id of the word") do
-       test_word = Word.new("Party")
-       test_word.save()
-       expect(test_word.id()).to(eq(1))
+   describe('#id') do
+     it('sets its ID when you save it') do
+       word = Word.new("party")
+       word.save()
+       expect(word.id).to(be_an_instance_of(Fixnum))
      end
    end
 
