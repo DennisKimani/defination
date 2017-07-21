@@ -1,7 +1,7 @@
 require('sinatra')
   require('sinatra/reloader')
   also_reload('lib/**/*.rb')
-  require('./lib/description')
+  require('./lib/definition')
   require('./lib/word')
 
   get('/') do
@@ -24,42 +24,42 @@ require('sinatra')
     erb(:success)
   end
 
-  get('/descriptions/new') do
-    erb(:word_descriptions_form)
+  get('/definitions/new') do
+    erb(:word_definition)
   end
 
-  get('/descriptions') do
-    @descriptions = Description.all()
-    erb(:descriptions)
+  get('/definitions') do
+    @definitions = Definition.all()
+    erb(:definitions)
   end
 
-  post('/descriptions') do
-    description = params.fetch('name')
-    Description.new(description).save()
-    @descriptions = Description.all()
-    erb(:success_2)
+  post('/definitions') do
+    definition = params.fetch('name')
+    Definition.new(definition).save()
+    @definitions = Definition.all()
+    erb(:suces)
   end
 
-  get('/descriptions/:id') do
-    @descriptions = Description.find(params.fetch('id').to_i())
-    erb(:descriptions)
+  get('/definitions/:id') do
+    @definitions = Definition.find(params.fetch('id').to_i())
+    erb(:definitions)
   end
 
   get('/words/:id') do
-    @word = Description.find(params.fetch('id').to_i())
-    erb(:descriptions)
+    @word = Definition.find(params.fetch('id').to_i())
+    erb(:definitions)
   end
 
-  get('/words/:id/descriptions/new') do
-      @description = Description.find(params.fetch('id').to_i())
-      erb(:word_descriptions_form)
+  get('/words/:id/definitions/new') do
+      @definition = Definition.find(params.fetch('id').to_i())
+      erb(:word_definition)
   end
 
-  post('/descriptions') do
-    description = params.fetch('description')
-    @description = Description.new(description)
-    @description.save()
+  post('/definitions') do
+    definition = params.fetch('definition')
+    @definition = Definition.new(definition)
+    @definition.save()
     @word = Word.find(params.fetch('word_id').to_i())
-    @word.add_description(@description)
+    @word.add_definition(@definition)
     erb(:success)
   end
