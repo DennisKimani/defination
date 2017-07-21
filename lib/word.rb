@@ -1,32 +1,37 @@
 class Word
-  @@words = []
-
-  define_method(:initialize) do |single|
-    @single = single
-    @id = @@words.length.+(1)
-  end
-
-  define_method(:single) do
-    @single
-  end
-
-  define_singleton_method(:all) do
-    @@words
-  end
-
-  define_method(:save) do
-    @@words.push(self)
-  end
-
-  define_singleton_method(:clear) do
     @@words = []
-  end
 
-  define_singleton_method(:find) do |identification|
-    found_word = nil
-    @@words.each do |word|
-      found_word = word if word.id.eql?(identification.to_i)
+    attr_reader(:name, :id, :define)
+
+    define_method(:initialize) do |name|
+      @name = name
+      @id = @@words.length().+(1)
+      @defines = []
     end
-    found_word
+
+    define_singleton_method(:all) do
+      @@words
+    end
+
+    define_method(:save) do
+      @@words.push(self)
+    end
+
+    define_singleton_method(:clear) do
+      @@words = []
+    end
+
+    define_singleton_method(:find) do |id|
+      found_word = nil
+      @@words.each() do |word|
+        if word.id().eql?(id)
+          found_word = word
+        end
+      end
+      found_word
+    end
+
+    define_method(:add_definition) do |definition|
+      @defines.push(definition)
+    end
   end
-end
