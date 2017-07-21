@@ -11,3 +11,7 @@ class Description
   define_singleton_method(:all) do
     @@definations
   end
+
+define_method(:save) do
+  @@defination.push(self)
+end
