@@ -1,5 +1,5 @@
 class Description
-  @@description = []
+  @@descriptions = []
 
   attr_reader(:name, :id)
 
@@ -9,9 +9,13 @@ class Description
   end
 
   define_singleton_method(:all) do
-    @@definations
+    @@descriptions
   end
 
 define_method(:save) do
-  @@defination.push(self)
+  @@descriptions.push(self)
+end
+
+define_method(:clear) do
+  @@descriptions = []
 end
