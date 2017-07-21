@@ -1,21 +1,8 @@
-<h1>My First Dictionary.</h1>
+<h1>Welcome to Word Dictionary</h1>
 
-<h4>Some of the words which are defined are:-</h4>
+<hr>
 
 <ul>
-  <% @words.each() do |word| %>
-  <li>
-    <a href="/words"><%= word.single() %></a>
-  </li>
-  <% end %>
-</ul>
-
-<h3>Add a new word with description.</h3>
-
-<div class="form-group">
-  <form action="/words" method="post">
-    <label for="single">Enter Word</label>
-    <input id="single" name="single" type="text">
-    <button type="submit">Add word</button>
-  </form>
-</div>
+  <a href="/words"><button class="button btn">See Words List</button></a>
+  <a href="/words/new"><button class="button btn">Add New Word</button></a>
+</ul>  
