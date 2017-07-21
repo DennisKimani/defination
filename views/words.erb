@@ -1,0 +1,11 @@
+<h3>Here are all the Words in this dictionary:</h3>
+
+<hr>
+
+  <ul>
+    <% @words.each() do |define| %>
+      <li><a href="/definitions/<%= define.id() %>"><%= define.name %></a></li>
+    <% end %>
+  </ul>
+
+  <a href="/"><button class="button btn">Return to Main Page</button></a>
